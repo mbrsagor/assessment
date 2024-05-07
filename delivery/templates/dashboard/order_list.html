@@ -1,0 +1,58 @@
+{% load static %}
+
+<div class="col">
+    <div class="card h-lg-100 overflow-hidden">
+        <div class="card-body p-0">
+            <div class="table-responsive scrollbar">
+                <table class="table table-dashboard mb-0 table-borderless fs--1 border-200">
+                    <thead class="bg-light">
+                    <tr class="text-900">
+                        <th>List of new orders</th>
+                        <th class="text-center">Category</th>
+                        <th class="text-center">Tag Number</th>
+                        <th class="text-end">Section</th>
+                        <th class="text-end">Area</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% if devices %}
+                        {% for device in devices %}
+                            <tr class="border-bottom border-200">
+                                <td>
+                                    <div class="d-flex align-items-center position-relative">
+                                        {% if device.image %}
+                                            <img class="rounded-1 border border-200" src="{{ device.image.url }}"
+                                                 width="60" alt="{{ device.name }}">
+                                        {% endif %}
+                                        <div class="flex-1 ms-3">
+                                            <h6 class="mb-1 fw-semi-bold text-nowrap">
+                                                <a class="text-900 stretched-link"
+                                                   href="/">{{ device.name }}</a>
+                                            </h6>
+                                            <p class="fw-semi-bold mb-0 text-500">
+                                                {% if device.is_available %}
+                                                    <span>Yes Available</span>
+                                                    {% else %}
+                                                    <span>Not Available</span>
+                                                {% endif %}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="align-middle text-center fw-semi-bold">{{ device.category }}</td>
+                                <td class="align-middle text-center fw-semi-bold">{{ device.tag_number }}</td>
+                                <td class="align-middle text-end fw-semi-bold">{{ device.section }}</td>
+                                <td class="align-middle text-end">{{ device.area }}</td>
+                            </tr>
+                        {% endfor %}
+                    {% endif %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="card-footer bg-light py-2">
+            <div class="col-auto text-right"><a class="btn btn-sm btn-falcon-default" href="/">View
+                All</a></div>
+        </div>
+    </div>
+</div>

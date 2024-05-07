@@ -1,0 +1,11 @@
+venv
+.idea/
+__pycache__/
+db.sqlite3
+migrations/
+media
+.DS_Store
+.env
+.env.docker
+tasks.text
+staticfiles

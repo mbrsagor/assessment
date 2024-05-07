@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Dashboard || DeliveryMama {% endblock %}
+
+{% block content %}
+    <div class="card mb-3">
+        <nav class="p-3" style="--falcon-breadcrumb-divider: '»';"
+             aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+            </ol>
+        </nav>
+    </div>
+    <div class="row g-3 mb-3">
+        {% include 'dashboard/card.html' %}
+    </div>
+    <div class="row">
+        {% include 'dashboard/order_list.html' %}
+    </div>
+    <br/>
+    <div class="row">
+        {% include 'dashboard/project_list.html' %}
+    </div>
+{% endblock %}
