@@ -1,0 +1,15 @@
+from django.utils.translation import gettext as _
+
+DATA_RETURN = _("Data successfully render")
+SIGNIN_SUCCESS = _("Successfully Logged In.")
+SIGNIN_FAILED = _("Invalid login")
+SIGN_OUT_SUCCESS = _("Logout successfully.")
+EXPIRED = _("Already token has been expired.")
+NOT_FOUND = _("Sorry! No data found this ID.")
+CREATE_USER = _("User has been created successfully.")
+OTP_SUCCESS = _("OTP send success.")
+INVALID_EMAIL = _("Invalid email! The email is not register the account.")
+COMMON_ERROR = _("Something went to wrong..")
+PASSWORD_CHANGE = _("Password change successfully.")
+PASSWORD_MSG = _("Sorry! Password cant be empty.")
+OTP_FAILED = _("Sorry! OTP did not matched.")
