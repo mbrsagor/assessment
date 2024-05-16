@@ -51,6 +51,7 @@ DEFAULT_APPS = [
 PROJECT_APPS = [
     'delivery',
     'user',
+    'pony',
 ]
 
 OTHER_APPS = [
