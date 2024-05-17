@@ -42,6 +42,35 @@ class SignInAPIView(ObtainAuthToken):
             return Response(response.auth_failed_response(message.SIGNIN_FAILED), status=status.HTTP_200_OK)
 
 
+# class SignUpAPIView(views.APIView):
+#     """
+#     Name: User signUp API
+#     URL: /api/v1/user/signup/
+#     :param
+#     name, email, phone, password
+#     """
+#     permission_classes = (permissions.AllowAny,)
+#
+#     def post(self, request):
+#         try:
+#             serializer = serializers.UserSignUpSerializer(data=request.data)
+#             if serializer.is_valid(raise_exception=True):
+#                 user = serializer.save()
+#                 # Send OTP
+#                 otp = otp_utils.generate_otp()
+#                 user.otp = otp
+#                 user.is_active = False
+#                 user.save()
+#                 otp_utils.send_otp_account_activate(user.email, user.otp)
+#                 return Response(response.prepare_create_success_response(messages.SIGNUP_SUCCESS),
+#                                 status=status.HTTP_201_CREATED)
+#             error_list = [serializer.errors[error][0] for error in serializer.errors]
+#             error = ' '.join(error_list)
+#             return Response(response.prepare_error_response(error), status=status.HTTP_200_OK)
+#         except Exception as ex:
+#             return Response(response.prepare_error_response(str(ex)), status=status.HTTP_200_OK)
+
+
 class RegistrationAPIView(views.APIView):
     """
     Name: User SignUp API
