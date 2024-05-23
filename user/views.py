@@ -6,8 +6,7 @@ from rest_framework import views, generics, status, permissions
 # from utils import otp
 from user.models import User
 from user import serializers
-from utils import response
-from utils import message
+from utils import response, message, otp_helper
 
 
 # User Login API
@@ -57,11 +56,11 @@ class SignInAPIView(ObtainAuthToken):
 #             if serializer.is_valid(raise_exception=True):
 #                 user = serializer.save()
 #                 # Send OTP
-#                 otp = otp_utils.generate_otp()
+#                 otp = otp_helper.generate_otp()
 #                 user.otp = otp
 #                 user.is_active = False
 #                 user.save()
-#                 otp_utils.send_otp_account_activate(user.email, user.otp)
+#                 otp_helper.generate_otp(user.email, user.otp)
 #                 return Response(response.prepare_create_success_response(messages.SIGNUP_SUCCESS),
 #                                 status=status.HTTP_201_CREATED)
 #             error_list = [serializer.errors[error][0] for error in serializer.errors]
